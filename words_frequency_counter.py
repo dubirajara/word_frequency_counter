@@ -12,7 +12,7 @@ urls = ['https://storage.googleapis.com/apache-beam-samples/shakespeare/kinglear
 stop_words_url = 'http://ir.dcs.gla.ac.uk/resources/linguistic_utils/stop_words'
 
 data_url = [requests.get(url).text.lower().split() for url in urls]  # Get urls data and convert in words lists
-data_url = list(chain.from_iterable(data_url))  # Join words lists
+data_url = list(chain.from_iterable(data_url))  # Join three iterable words lists in only one.
 
 stop_words = requests.get(stop_words_url).text.split()  # Get stop words data to relevant words classification
 
