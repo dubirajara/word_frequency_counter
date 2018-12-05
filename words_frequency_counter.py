@@ -19,7 +19,7 @@ stop_words = requests.get(stop_words_url).text.split()  # Get stop words data to
 
 def clean_words(data):
     """Clean the data, punctuation and irrelevant words"""
-    re_path = re.compile('[%s]' % re.escape(string.punctuation))
+    re_path = re.compile(f'[{re.escape(string.punctuation)}]')  # regex pattern
     words_clean_p = [re_path.sub('', w) for w in data]  # Clean punctuation
     relevant_words = [x for x in words_clean_p if x not in stop_words]  # Get only relevant words
     return relevant_words
@@ -27,7 +27,7 @@ def clean_words(data):
 
 def word_frequency_counter(words):
     """Count and analyze word frequencies"""
-    count_word_freq = [words.count(word) for word in words]
+    count_word_freq = [words.count(word) for word in words]  # Count words frequency
     freq_word_dic = dict(zip(words, count_word_freq))  # Convert the frequency list and word list in Dict
     return dict(sorted(freq_word_dic.items(), key=itemgetter(1), reverse=True))  # Dict ordered by frequency (gtl)
 
