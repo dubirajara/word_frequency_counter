@@ -5,7 +5,7 @@ Relevant words frequency counter in three Shakespeare's literary masterpieces:
 To relevant words classification, i used the [Stop Words](http://ir.dcs.gla.ac.uk/resources/linguistic_utils/stop_words) data from linguistic utils resource of University of Glasgow.
 ## How to use?
 
-To run the script should use Python 3.6+
+To run the script requires Python 3.6 or newer.
 
 - Clone the repository:
 
