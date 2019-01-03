@@ -9,19 +9,19 @@ urls = ['https://storage.googleapis.com/apache-beam-samples/shakespeare/kinglear
         'https://storage.googleapis.com/apache-beam-samples/shakespeare/othello.txt',
         'https://storage.googleapis.com/apache-beam-samples/shakespeare/romeoandjuliet.txt']
 
-stop_words_url = 'http://ir.dcs.gla.ac.uk/resources/linguistic_utils/stop_words'
-
 data_url = [requests.get(url).text.lower().split() for url in urls]  # Get urls data and convert in words lists
 data_url = list(chain.from_iterable(data_url))  # Join three iterable words lists in only one.
-
-stop_words = requests.get(stop_words_url).text.split()  # Get stop words data to relevant words classification
 
 
 def clean_words(data):
     """Clean the data, punctuation and irrelevant words"""
     re_path = re.compile(f'[{re.escape(string.punctuation)}]')  # regex pattern
     words_clean_p = [re_path.sub('', w) for w in data]  # Clean punctuation
+
+    stop_words_url = 'http://ir.dcs.gla.ac.uk/resources/linguistic_utils/stop_words'
+    stop_words = requests.get(stop_words_url).text.split()  # Get stop words data to relevant words classification
     relevant_words = [x for x in words_clean_p if x not in stop_words]  # Get only relevant words
+
     return relevant_words
 
 
@@ -29,6 +29,7 @@ def word_frequency_counter(words):
     """Count and analyze word frequencies"""
     count_word_freq = [words.count(word) for word in words]  # Count words frequency
     freq_word_dic = dict(zip(words, count_word_freq))  # Convert the frequency list and word list in Dict
+
     return dict(sorted(freq_word_dic.items(), key=itemgetter(1), reverse=True))  # Dict ordered by frequency (gtl)
 
 
