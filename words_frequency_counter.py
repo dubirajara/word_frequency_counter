@@ -18,8 +18,8 @@ def clean_words(data):
     re_path = re.compile(f'[{re.escape(string.punctuation)}]')  # regex pattern
     words_clean_p = [re_path.sub('', w) for w in data]  # Clean punctuation
 
-    stop_words_url = 'http://ir.dcs.gla.ac.uk/resources/linguistic_utils/stop_words'
-    stop_words = requests.get(stop_words_url).text.split()  # Get stop words data to relevant words classification
+    with open("StopWords.txt", "r") as f:
+        stop_words = [word.strip() for word in f]  # Get stop words data to relevant words classification
     relevant_words = [x for x in words_clean_p if x not in stop_words]  # Get only relevant words
 
     return relevant_words
