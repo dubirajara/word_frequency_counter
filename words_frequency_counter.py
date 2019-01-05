@@ -16,7 +16,7 @@ data_url = list(chain.from_iterable(data_url))  # Join three iterable words list
 def clean_words(data):
     """Clean the data, punctuation and irrelevant words"""
     re_path = re.compile(f'[{re.escape(string.punctuation)}]')  # regex pattern
-    words_clean_p = [re_path.sub('', w) for w in data]  # Clean punctuation
+    words_clean_p = (re_path.sub('', w) for w in data)  # Clean punctuation
 
     with open("StopWords.txt", "r") as f:
         stop_words = [word.strip() for word in f]  # Get stop words data to relevant words classification
