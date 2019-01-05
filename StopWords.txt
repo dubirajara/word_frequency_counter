@@ -175,6 +175,7 @@ ey
 f
 far
 few
+fie
 fifteen
 fifth
 fify
