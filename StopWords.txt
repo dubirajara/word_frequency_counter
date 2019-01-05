@@ -139,7 +139,6 @@ done
 dont
 dost
 doth
-doth
 down
 downwards
 due
@@ -147,6 +146,7 @@ during
 e
 each
 edu
+een
 eg
 eight
 either
@@ -156,6 +156,7 @@ elsewhere
 enough
 entirely
 ere
+errs
 especially
 et
 etc
@@ -226,7 +227,6 @@ he's
 hello
 help
 hence
-hence
 her
 here
 here's
@@ -243,7 +243,6 @@ him
 himself
 his
 hither
-hither
 hopefully
 how
 howbeit
@@ -256,6 +255,7 @@ i've
 id
 ie
 if
+ift
 ignored
 ii
 iii
@@ -284,7 +284,6 @@ it's
 itd
 itll
 its
-its
 itself
 ive
 j
@@ -312,6 +311,7 @@ like
 liked
 likely
 little
+livest
 look
 looking
 looks
@@ -326,6 +326,7 @@ me
 mean
 meanwhile
 merely
+mes
 might
 mine
 more
@@ -407,6 +408,7 @@ please
 plus
 possible
 presumably
+prickd
 probably
 provides
 put
@@ -430,6 +432,7 @@ s
 said
 same
 saw
+sawt
 say
 saying
 says
@@ -508,7 +511,6 @@ thereby
 therefore
 therein
 theres
-theres
 thereupon
 these
 they
@@ -529,14 +531,12 @@ thorough
 thoroughly
 those
 thou
-thou
 though
 three
 through
 throughout
 thru
 thus
-thy
 thy
 tis
 tither
@@ -580,7 +580,9 @@ value
 various
 very
 via
+vii
 viz
+vor
 vs
 w
 want
@@ -598,7 +600,6 @@ we've
 wed
 welcome
 well
-well
 went
 were
 weren't
@@ -609,7 +610,6 @@ what's
 whatever
 whats
 when
-whence
 whence
 whenever
 where
@@ -644,10 +644,12 @@ within
 without
 won't
 wonder
-would
+wont
 would
 would'st
 wouldn't
+wouldnt
+wouldst
 x
 y
 ye
@@ -670,3 +672,4 @@ yourselves
 youve
 z
 zero
+zir

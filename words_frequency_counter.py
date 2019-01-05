@@ -5,12 +5,12 @@ import string
 
 import requests
 
-urls = ['https://storage.googleapis.com/apache-beam-samples/shakespeare/kinglear.txt',
+urls = ('https://storage.googleapis.com/apache-beam-samples/shakespeare/kinglear.txt',
         'https://storage.googleapis.com/apache-beam-samples/shakespeare/othello.txt',
-        'https://storage.googleapis.com/apache-beam-samples/shakespeare/romeoandjuliet.txt']
+        'https://storage.googleapis.com/apache-beam-samples/shakespeare/romeoandjuliet.txt')
 
 data_url = (requests.get(url).text.lower().split() for url in urls)  # Get urls data and convert in words lists
-data_url = list(chain.from_iterable(data_url))  # Join three iterable words lists in only one.
+data_url = chain.from_iterable(data_url)  # Join three iterable words lists in only one.
 
 
 def clean_words(data):
