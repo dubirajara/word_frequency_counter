@@ -9,7 +9,7 @@ urls = ['https://storage.googleapis.com/apache-beam-samples/shakespeare/kinglear
         'https://storage.googleapis.com/apache-beam-samples/shakespeare/othello.txt',
         'https://storage.googleapis.com/apache-beam-samples/shakespeare/romeoandjuliet.txt']
 
-data_url = [requests.get(url).text.lower().split() for url in urls]  # Get urls data and convert in words lists
+data_url = (requests.get(url).text.lower().split() for url in urls)  # Get urls data and convert in words lists
 data_url = list(chain.from_iterable(data_url))  # Join three iterable words lists in only one.
 
 
@@ -27,7 +27,7 @@ def clean_words(data):
 
 def word_frequency_counter(words):
     """Count and analyze word frequencies"""
-    count_word_freq = [words.count(word) for word in words]  # Count words frequency
+    count_word_freq = (words.count(word) for word in words)  # Count words frequency
     freq_word_dic = dict(zip(words, count_word_freq))  # Convert the frequency list and word list in Dict
 
     return dict(sorted(freq_word_dic.items(), key=itemgetter(1), reverse=True))  # Dict ordered by frequency (gtl)
