@@ -18,7 +18,7 @@ git clone https://github.com/dubirajara/word_frequency_counter.git word_frequenc
 pip install requests
 ```
 
-- And run words_frecuency_counter.py:
+- And run words_frequency_counter.py:
 ```sh
 python words_frequency_counter.py
 ```
