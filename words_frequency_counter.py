@@ -1,5 +1,6 @@
 from itertools import chain
 from operator import itemgetter
+from typing import Iterator
 import re
 import string
 
@@ -13,19 +14,19 @@ data_url = (requests.get(url).text.lower().split() for url in urls)  # Get urls 
 data_url = chain.from_iterable(data_url)  # Join three iterable words lists in only one.
 
 
-def clean_words(data):
+def clean_words(data: Iterator) -> list:
     """Clean the data, punctuation and irrelevant words"""
     re_path = re.compile(f'[{re.escape(string.punctuation)}]')  # regex pattern
     words_clean_p = (re_path.sub('', w) for w in data)  # Clean punctuation
 
-    with open("StopWords.txt", "r") as f:
-        stop_words = [word.strip() for word in f]  # Get stop words data to relevant words classification
+    with open("StopWords.txt", "r") as file:
+        stop_words = [word.strip() for word in file]  # Get stop words data to relevant words classification
     relevant_words = [x for x in words_clean_p if x not in stop_words]  # Get only relevant words
 
     return relevant_words
 
 
-def word_frequency_counter(words):
+def word_frequency_counter(words: list) -> dict:
     """Count and analyze word frequencies"""
     count_word_freq = (words.count(word) for word in words)  # Count words frequency
     freq_word_dic = dict(zip(words, count_word_freq))  # Convert the frequency list and word list in Dict
