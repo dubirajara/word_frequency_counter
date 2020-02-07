@@ -1,3 +1,4 @@
+from collections import Counter
 from itertools import chain
 from operator import itemgetter
 from typing import Iterator
@@ -28,10 +29,8 @@ def clean_words(data: Iterator) -> list:
 
 def word_frequency_counter(words: list) -> dict:
     """Count and analyze word frequencies"""
-    count_word_freq = (words.count(word) for word in words)  # Count words frequency
-    freq_word_dic = dict(zip(words, count_word_freq))  # Convert the frequency list and word list in Dict
-
-    return dict(sorted(freq_word_dic.items(), key=itemgetter(1), reverse=True))  # Dict ordered by frequency (gtl)
+    count_word_freq = Counter(words)
+    return dict(sorted(count_word_freq.items(), key=itemgetter(1), reverse=True))  # Dict ordered by frequency (gtl)
 
 
 if __name__ == '__main__':
