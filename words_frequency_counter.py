@@ -27,7 +27,7 @@ def clean_words(data: Iterator) -> Generator:
     return (re_path.sub('', w) for w in data)
 
 
-def get_relevant_words(words: Iterator) -> Generator:
+def get_relevant_words(words: Generator) -> Generator:
     """Get relevant words"""
     with open("StopWords.txt", "r") as file:
         stop_words = [word.strip() for word in file]
