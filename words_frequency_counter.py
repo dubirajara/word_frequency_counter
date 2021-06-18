@@ -37,7 +37,7 @@ def get_relevant_words(words: Generator) -> Generator:
 def word_frequency_counter(relevant_words: Generator) -> dict:
     """Count and analyze word frequencies"""
     count_word_freq = Counter(relevant_words)
-    return dict(sorted(count_word_freq.items(), key=itemgetter(1), reverse=True))
+    return dict(count_word_freq.most_common())
 
 
 def main():
